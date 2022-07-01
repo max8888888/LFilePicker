@@ -1,7 +1,6 @@
 package com.leon.lfilepickerlibrary.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -9,6 +8,8 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.leon.lfilepickerlibrary.R;
 import com.leon.lfilepickerlibrary.utils.Constant;

@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.leon.lfilepickerlibrary.R;
 import com.leon.lfilepickerlibrary.adapter.PathAdapter;
@@ -27,6 +28,7 @@ import com.leon.lfilepickerlibrary.widget.EmptyRecyclerView;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class LFilePickerActivity extends AppCompatActivity {
 
@@ -53,6 +55,7 @@ public class LFilePickerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lfile_picker);
         initView();
+        mToolbar.setTitle("");//解决androidX高版本setTitle无效的问题
         setSupportActionBar(mToolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -266,6 +269,9 @@ public class LFilePickerActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         if (mParamEntity.getAddText() != null) {
             mBtnAddBook.setText(mParamEntity.getAddText());
+        }
+        if (mParamEntity.getAddBackgroundColor() != null) {
+            mBtnAddBook.setBackgroundColor(Color.parseColor(mParamEntity.getAddBackgroundColor()));
         }
     }
 

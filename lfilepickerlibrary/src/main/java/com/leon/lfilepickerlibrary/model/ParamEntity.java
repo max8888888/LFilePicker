@@ -17,6 +17,7 @@ public class ParamEntity implements Serializable {
     private int backIcon;
     private boolean mutilyMode;
     private String addText;
+    private String addBackgroundColor;
     private int iconStyle;
     private String[] fileTypes;
     private String notFoundFiles;
@@ -90,6 +91,14 @@ public class ParamEntity implements Serializable {
 
     public void setAddText(String addText) {
         this.addText = addText;
+    }
+
+    public String getAddBackgroundColor() {
+        return addBackgroundColor;
+    }
+
+    public void setAddBackgroundColor(String addBackgroundColor) {
+        this.addBackgroundColor = addBackgroundColor;
     }
 
     public int getIconStyle() {

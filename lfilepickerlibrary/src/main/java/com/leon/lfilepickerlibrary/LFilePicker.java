@@ -1,11 +1,12 @@
 package com.leon.lfilepickerlibrary;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.StyleRes;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
+import androidx.fragment.app.Fragment;
 
 import com.leon.lfilepickerlibrary.model.ParamEntity;
 import com.leon.lfilepickerlibrary.ui.LFilePickerActivity;
@@ -17,7 +18,7 @@ import com.leon.lfilepickerlibrary.ui.LFilePickerActivity;
 public class LFilePicker {
     private Activity mActivity;
     private Fragment mFragment;
-    private android.support.v4.app.Fragment mSupportFragment;
+    private Fragment mSupportFragment;
     private String mTitle;
     private String mTitleColor;
     private int theme = R.style.LFileTheme;
@@ -28,6 +29,7 @@ public class LFilePicker {
     private boolean mMutilyMode = true;
     private boolean mChooseMode = true;
     private String mAddText;
+    private String mAddBackgroundColor;
     private int mIconStyle;
     private String[] mFileTypes;
     private String mNotFoundFiles;
@@ -64,7 +66,7 @@ public class LFilePicker {
      * @param supportFragment
      * @return
      */
-    public LFilePicker withSupportFragment(android.support.v4.app.Fragment supportFragment) {
+    public LFilePicker withSupportFragment(Fragment supportFragment) {
         this.mSupportFragment = supportFragment;
         return this;
     }
@@ -169,6 +171,18 @@ public class LFilePicker {
         this.mAddText = text;
         return this;
     }
+
+    /**
+     * 设置多选时按钮背景颜色
+     *
+     * @param color
+     * @return
+     */
+    public LFilePicker withAddBackgroundColor(String color) {
+        this.mAddBackgroundColor = color;
+        return this;
+    }
+
 
     /**
      * 设置文件夹图标风格
@@ -293,6 +307,7 @@ public class LFilePicker {
         paramEntity.setBackIcon(mBackStyle);
         paramEntity.setMutilyMode(mMutilyMode);
         paramEntity.setAddText(mAddText);
+        paramEntity.setAddBackgroundColor(mAddBackgroundColor);
         paramEntity.setIconStyle(mIconStyle);
         paramEntity.setFileTypes(mFileTypes);
         paramEntity.setNotFoundFiles(mNotFoundFiles);
