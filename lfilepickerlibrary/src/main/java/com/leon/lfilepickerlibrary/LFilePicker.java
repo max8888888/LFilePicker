@@ -29,6 +29,7 @@ public class LFilePicker {
     private boolean mMutilyMode = true;
     private boolean mChooseMode = true;
     private String mAddText;
+    private String mAddTextColor;
     private String mAddBackgroundColor;
     private int mIconStyle;
     private String[] mFileTypes;
@@ -173,6 +174,17 @@ public class LFilePicker {
     }
 
     /**
+     * 设置多选时按钮文字颜色
+     *
+     * @param color
+     * @return
+     */
+    public LFilePicker withAddTextColor(String color) {
+        this.mAddTextColor = color;
+        return this;
+    }
+
+    /**
      * 设置多选时按钮背景颜色
      *
      * @param color
@@ -182,7 +194,6 @@ public class LFilePicker {
         this.mAddBackgroundColor = color;
         return this;
     }
-
 
     /**
      * 设置文件夹图标风格
@@ -307,6 +318,7 @@ public class LFilePicker {
         paramEntity.setBackIcon(mBackStyle);
         paramEntity.setMutilyMode(mMutilyMode);
         paramEntity.setAddText(mAddText);
+        paramEntity.setAddTextColor(mAddTextColor);
         paramEntity.setAddBackgroundColor(mAddBackgroundColor);
         paramEntity.setIconStyle(mIconStyle);
         paramEntity.setFileTypes(mFileTypes);

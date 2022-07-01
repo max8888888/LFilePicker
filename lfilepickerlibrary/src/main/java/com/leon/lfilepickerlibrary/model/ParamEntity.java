@@ -1,7 +1,5 @@
 package com.leon.lfilepickerlibrary.model;
 
-import com.leon.lfilepickerlibrary.R;
-
 import java.io.Serializable;
 
 /**
@@ -17,6 +15,7 @@ public class ParamEntity implements Serializable {
     private int backIcon;
     private boolean mutilyMode;
     private String addText;
+    private String addTextColor;
     private String addBackgroundColor;
     private int iconStyle;
     private String[] fileTypes;
@@ -87,6 +86,14 @@ public class ParamEntity implements Serializable {
 
     public String getAddText() {
         return addText;
+    }
+
+    public String getAddTextColor() {
+        return addTextColor;
+    }
+
+    public void setAddTextColor(String addTextColor) {
+        this.addTextColor = addTextColor;
     }
 
     public void setAddText(String addText) {

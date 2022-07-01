@@ -270,6 +270,9 @@ public class LFilePickerActivity extends AppCompatActivity {
         if (mParamEntity.getAddText() != null) {
             mBtnAddBook.setText(mParamEntity.getAddText());
         }
+        if (mParamEntity.getAddTextColor() != null) {
+            mBtnAddBook.setTextColor(Color.parseColor(mParamEntity.getAddTextColor()));
+        }
         if (mParamEntity.getAddBackgroundColor() != null) {
             mBtnAddBook.setBackgroundColor(Color.parseColor(mParamEntity.getAddBackgroundColor()));
         }
